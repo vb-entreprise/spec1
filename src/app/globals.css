@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Proxima Nova font */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('https://ext.same-assets.com/2241434697/2245009963.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('https://ext.same-assets.com/2241434697/1941334548.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('https://ext.same-assets.com/2241434697/1115478355.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('https://ext.same-assets.com/2241434697/2947992763.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 207 84% 29%;
+    --card: 0 0% 100%;
+    --card-foreground: 207 84% 29%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 207 84% 29%;
+    --primary: 359 89% 41%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 207 84% 29%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 207 84% 29%;
+    --muted-foreground: 207 84% 29%;
+    --accent: 39 96% 61%;
+    --accent-foreground: 207 84% 29%;
+    --destructive: 359 89% 41%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 207 84% 29%;
+    --input: 207 84% 29%;
+    --ring: 359 89% 41%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 207 84% 29%;
+    --foreground: 210 20% 98%;
+    --card: 207 84% 29%;
+    --card-foreground: 210 20% 98%;
+    --popover: 207 84% 29%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 359 89% 41%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 207 84% 29%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 207 84% 29%;
+    --muted-foreground: 210 20% 98%;
+    --accent: 39 96% 61%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 359 89% 41%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 207 84% 29%;
+    --input: 207 84% 29%;
+    --ring: 359 89% 41%;
+  }
+}
+
+/* Custom Typography */
+body {
+  font-family: 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #333;
+  padding-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Container */
+.cu-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Navigation Styles */
+.nav-link {
+  position: relative;
+  transition: color 0.3s;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #c40c12;
+  transition: width 0.3s;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+/* Announcement Bar Animation */
+.announcement-bar {
+  background-color: transparent;
+  padding: 0.5rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  z-index: 50;
+}
+
+.announcement-content {
+  display: flex;
+  gap: 2rem;
+  animation: slide 30s linear infinite;
+  color: #fff;
+}
+
+.announcement-content a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mega Menu Styles */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 30;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  animation: fade-in 0.2s ease-in-out;
+}
+
+.mega-menu-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f425c;
+  margin-bottom: 0.75rem;
+}
+
+.mega-menu-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mega-menu-link {
+  color: #555;
+  font-size: 0.875rem;
+  transition: color 0.3s;
+}
+
+.mega-menu-link:hover {
+  color: #a9473b;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Headings */
+.section-heading {
+  color: #1f425c;
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+}
